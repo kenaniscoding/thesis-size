@@ -356,13 +356,14 @@ def calibrate_and_measure_single_image():
     measurement_system = MangoMeasurementSystem('mango_detection_model.pth')
     
     # Load image with reference object (e.g., ruler, coin, known object)
-    image_path = 'mango_image_with_reference.jpg'
+    image_path = 'img1.png'
     image = cv2.imread(image_path)
     
     # Manual calibration with reference object
     # You need to manually identify the reference object bounding box
-    reference_box = [100, 100, 200, 200]  # [x1, y1, x2, y2] of reference object
-    reference_size_cm = 5.0  # Known size of reference object in cm
+    # (980, 435, 1164, 612)
+    reference_box = [980, 435, 1164, 612]  # [x1, y1, x2, y2] of reference object
+    reference_size_cm = 2.4  # Known size of reference object in cm
     
     # Calibrate
     measurement_system.calibrate_with_reference_object(image, reference_box, reference_size_cm)
@@ -428,8 +429,7 @@ def interactive_calibration():
     # Measure and visualize
     measurement_system.visualize_measurements(image_path)
 
-if __name__ == "__main__":
-    # Example usage
+def example_use():
     print("Mango Measurement System")
     print("1. Single image measurement")
     print("2. Interactive calibration")
@@ -449,3 +449,10 @@ if __name__ == "__main__":
         system.batch_analyze(folder, 'mango_measurements.csv')
     else:
         print("Invalid choice")
+
+if __name__ == "__main__":
+    # Example usage
+    example_use()
+    # system = MangoMeasurementSystem('mango_detection_model.pth')    
+    # img = 'img1.png'
+    # system.auto_calibrate_with_coin(img, "peso")
