@@ -349,14 +349,14 @@ class MangoMeasurementSystem:
         return df
 
 # Example usage functions
-def calibrate_and_measure_single_image():
+def calibrate_and_measure_single_image(img_path):
     """Example: Calibrate with reference object and measure mangoes"""
     
     # Initialize system
     measurement_system = MangoMeasurementSystem('mango_detection_model.pth')
     
     # Load image with reference object (e.g., ruler, coin, known object)
-    image_path = 'img1.png'
+    image_path = img_path
     image = cv2.imread(image_path)
     
     # Manual calibration with reference object
@@ -438,7 +438,8 @@ def example_use():
     choice = input("Choose option (1-3): ")
     
     if choice == "1":
-        calibrate_and_measure_single_image()
+        path = input("Input the img path: ")
+        calibrate_and_measure_single_image(path)
     elif choice == "2":
         interactive_calibration()
     elif choice == "3":
