@@ -117,7 +117,7 @@ class ReferenceBoxSelector:
 
 def main():
     # Initialize the reference box selector
-    selector = ReferenceBoxSelector("img1.png")
+    selector = ReferenceBoxSelector("img/photo.png")
     
     # Select the reference box
     reference_box = selector.select_reference_box()
