@@ -362,7 +362,7 @@ def calibrate_and_measure_single_image(img_path):
     # Manual calibration with reference object
     # You need to manually identify the reference object bounding box
     # (980, 435, 1164, 612)
-    reference_box = [980, 435, 1164, 612]  # [x1, y1, x2, y2] of reference object
+    reference_box = [815, 383, 999, 556]  # [x1, y1, x2, y2] of reference object
     reference_size_cm = 2.4  # Known size of reference object in cm
     
     # Calibrate
