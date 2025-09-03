@@ -295,7 +295,8 @@ class MangoMeasurementSystem:
             output_path = image_path.replace('.', '_measured.')
             cv2.imwrite(output_path, image)
             print(f"Annotated image saved as: {output_path}")
-    
+
+    # TODO: ANALYZE TWO IMAGES
     def batch_analyze(self, image_folder, output_csv=None):
         """
         Analyze multiple images and optionally save results to CSV
@@ -348,7 +349,7 @@ class MangoMeasurementSystem:
         
         return df
 
-# Example usage functions
+# TODO: GET SIZE USING ONE IMAGE
 def calibrate_and_measure_single_image(img_path):
     """Example: Calibrate with reference object and measure mangoes"""
     
